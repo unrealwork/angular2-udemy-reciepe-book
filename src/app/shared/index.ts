@@ -1,0 +1,1 @@
+export {Ingridient} from './ingridient';
