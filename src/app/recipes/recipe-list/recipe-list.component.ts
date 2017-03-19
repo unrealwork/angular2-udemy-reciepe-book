@@ -6,9 +6,15 @@ import {Recipe} from '../recipe';
   templateUrl: './recipe-list.component.html'
 })
 export class RecipeListComponent implements OnInit {
-  recipes: Recipe[] = [];
-  recipe = new Recipe('Dummy', 'Dummy', 'http://thumbs1.ebaystatic.com/d/l225/m/mM5u2kVAYbs3IRlwPfl6uOA.jpg');
-  @Output() recipeSelected = new EventEmitter<Recipe>();
+  recipes: Recipe[] = [
+    new Recipe('Shnitzel', 'Very Tasty',
+      'http://www.daringgourmet.com/wp-content/uploads/2014/03/Schnitzel-7_edited.jpg', []),
+    new Recipe('Summer Salad', 'Okayish',
+      'http://cdn.iowagirleats.com/wp-content/uploads/2013/05/Triple-Berry-Summer-Salad-03_mini.jpg', [])
+  ];
+
+  @Output()
+  recipeSelected = new EventEmitter<Recipe>();
 
   constructor() {
   }
