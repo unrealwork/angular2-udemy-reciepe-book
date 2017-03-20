@@ -20,4 +20,13 @@ export class RecipeService {
   getRecipes() {
     return this.recipes;
   }
+
+  getRecipe(id: number) {
+    return this.recipes[id];
+  }
+
+  deleteRecipe(recipe: Recipe) {
+    let index = this.recipes.indexOf(recipe);
+    this.recipes.splice(index, 1);
+  }
 }

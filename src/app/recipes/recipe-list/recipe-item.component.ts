@@ -7,5 +7,5 @@ import {Recipe} from '../recipe';
 })
 export class RecipeItemComponent {
   @Input() recipe: Recipe;
-  recipeId: number;
+  @Input() recipeId: number;
 }
