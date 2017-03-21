@@ -1,1 +1,1 @@
-export {Ingridient} from './ingridient';
+export {Ingredient} from './ingridient';

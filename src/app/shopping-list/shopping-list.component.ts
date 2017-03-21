@@ -1,5 +1,5 @@
 import {Component, OnInit, Input} from '@angular/core';
-import {Ingridient} from '../shared/ingridient';
+import {Ingredient} from '../shared/ingridient';
 import {ShoppingListService} from './shopping-list.service';
 
 @Component({
@@ -7,14 +7,21 @@ import {ShoppingListService} from './shopping-list.service';
   templateUrl: './shopping-list.component.html'
 })
 export class ShoppingListComponent implements OnInit {
-  items: Ingridient[] = [];
-
+  items: Ingredient[] = [];
+  selectedItem: Ingredient = null;
   constructor(private shoppingListService: ShoppingListService) {
   }
+
 
   ngOnInit() {
     this.items = this.shoppingListService.getItems();
   }
 
+  onSelectItem(item: Ingredient) {
+    this.selectedItem = item;
+  }
 
+  onCleared() {
+    this.selectedItem = null;
+  }
 }

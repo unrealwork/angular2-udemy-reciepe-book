@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
-import {Ingridient} from '../shared';
+import {Ingredient} from '../shared';
 
 @Injectable()
 export class ShoppingListService {
-  private items: Ingridient[] = [];
+  private items: Ingredient[] = [];
 
   constructor() {
   }
@@ -13,9 +13,21 @@ export class ShoppingListService {
     return this.items;
   }
 
-  addItems(ingredients: Ingridient[]) {
+  addItems(ingredients: Ingredient[]) {
     for (const ingredient of ingredients) {
       this.items.push(ingredient);
     }
+  }
+
+  addItem(item: Ingredient) {
+    this.items.push(item);
+  }
+
+  editItem(oldItem: Ingredient, newItem: Ingredient) {
+    this.items[this.items.indexOf(oldItem)] = newItem;
+  }
+
+  deleteItem(item: Ingredient) {
+    this.items.splice(this.items.indexOf(item), 1);
   }
 }
